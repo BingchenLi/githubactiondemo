@@ -15,7 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Print a greeting
-      run: |
-        echo Hello $USER_NAME
       env:
         USER_NAME: Tom
+        SECRET: ${{secrets.SECRET_NAME}} 
+      run: |
+        echo Hello $USER_NAME secret $SECRET
